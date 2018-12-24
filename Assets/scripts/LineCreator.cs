@@ -1,12 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LineCreator : MonoBehaviour {
 
 	public GameObject linePrefab;
 
 	Line activeLine;
+
+	public Image inkImage;
+	//private float maxInk;
 
 	// Use this for initialization
 	void Start () {
@@ -15,7 +19,7 @@ public class LineCreator : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetMouseButtonDown(0)) {
+		if (Input.GetMouseButtonDown(0) && CanDraw()) {
 			GameObject lineGO = Instantiate(linePrefab);
 			activeLine = lineGO.GetComponent<Line>();
 		}
@@ -24,10 +28,27 @@ public class LineCreator : MonoBehaviour {
 			activeLine = null;
 		}
 
-		if (activeLine != null) {
+		if (activeLine != null && CanDraw()) {
 			Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 			activeLine.UpdateLine(mousePos);
+			UseInk();
 		}
 
+	}
+
+	bool CanDraw () {
+		if(inkImage.fillAmount > 0){
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	void UseInk() {
+		inkImage.fillAmount = inkImage.fillAmount - 0.1f *Time.deltaTime;
+	}
+
+	public void ReloadInk(float quantity = 1) {
+		inkImage.fillAmount = inkImage.fillAmount + quantity;
 	}
 }
