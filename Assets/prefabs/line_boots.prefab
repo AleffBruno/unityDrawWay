@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 252322098632944718}
   m_Layer: 0
   m_Name: line_boots
-  m_TagString: Untagged
+  m_TagString: ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -55,7 +55,7 @@ EdgeCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 1
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.1}
   m_EdgeRadius: 0
   m_Points:
   - {x: -0.5, y: 0}
@@ -74,6 +74,9 @@ MonoBehaviour:
   lineRenderer: {fileID: 120280398740624784}
   edgeCol: {fileID: 68655804258493236}
   destroyMySelf: 0
+  trailEffect: {fileID: 1731986742605772, guid: 37b4dd7ec1ee836448963478b70c070d,
+    type: 2}
+  Car: {fileID: 0}
 --- !u!120 &120280398740624784
 LineRenderer:
   m_ObjectHideFlags: 1

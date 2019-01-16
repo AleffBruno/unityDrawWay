@@ -7,12 +7,13 @@ public class Line : MonoBehaviour {
 	// power ups para pegar tintas para poder desenhas o caminho __OK
 	// detectar manobras para dar tinta __OK
 	// fazer fases somente de manobras
-	// quanto mais giros, mains os pontos se multiplicam __NOP > manter a tela limpa, talvez na versao 2
+	// quanto mais giros, mais os pontos se multiplicam __NOP > manter a tela limpa, talvez na versao 2
 	// efetiso especiais : explosao , rastro de fogo quando andar mt rapido, distanciar camera em determinados momentos
 	// carros inimigos seguem, se encostar morre
 	// timer __NOP > deixe o game facil, talve na versao 2
 	// shop: aumentar capacidade de tinta
-	// explode carro se uma linha passar no meio dele __OK, falta efeito especial
+	// explode carro se uma linha passar no meio dele __FAIL
+	// stuff de aceletar o carro e deixar rastro de chama
 	// objetos dinamicos nas fases
 	// fazer fim da fase
 	// pause
@@ -25,9 +26,10 @@ public class Line : MonoBehaviour {
 	public EdgeCollider2D edgeCol;
 	public bool destroyMySelf;
 
-	List<Vector2> points; 
+	List<Vector2> points;
 
 	void Start() {
+
 		if(destroyMySelf) {
 			StartCoroutine(startDestroyLine());
 		}

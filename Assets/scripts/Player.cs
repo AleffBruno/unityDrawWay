@@ -8,13 +8,18 @@ public class Player : MonoBehaviour {
 	public LineCreator lineCreator;
 	private bool rayTouchUp = false;
 	private Vector2 initialRaycastUpPos;
-	private int numberOfRotations;
+	enum ExplosionType {GiantExplosion,GrayExplosion};
+	public allEffects allEffects;
+
 
 	void Start () {
 
 	}
 	void Update () {
 		WatchRotations();
+		if(transform.position.y < -21){
+			explodeMyself(ExplosionType.GiantExplosion);
+		}
 	}
 
 	void OnTriggerEnter2D(Collider2D col){
@@ -22,20 +27,40 @@ public class Player : MonoBehaviour {
 			Destroy(col.gameObject);
 			lineCreator.ReloadInk(1);
 		}	
+
+
 	}
 
 	void OnTriggerExit2D(Collider2D col) {
-		//print("exit");
+
 	}
 
 	void OnCollisionEnter2D(Collision2D collision)
 	{
 		if (collision.gameObject.tag == "ground")
 		{
-			Destroy(gameObject,0.5f);
+			explodeMyself(ExplosionType.GrayExplosion);
 			print("GAME OVER");
 		}
 	}
+
+	void explodeMyself(ExplosionType explosionType = ExplosionType.GrayExplosion){
+			//Destroy(gameObject,0.5f);
+			//Destroy(gameObject);
+			switch(explosionType){
+				case ExplosionType.GiantExplosion:
+					Instantiate(allEffects.GiantExplosion,
+								new Vector2(transform.position.x,transform.position.y+9f),
+								Quaternion.identity);
+					//GameObject explosion = Instantiate(allEffects.GiantExplosion);
+					//explosion.transform.position = new Vector2(transform.position.x,transform.position.y+7.2f);
+				break;
+				case ExplosionType.GrayExplosion:
+					GameObject grayExplosion = Instantiate(allEffects.GrayExplosion);
+					grayExplosion.transform.position = new Vector2(transform.position.x,transform.position.y);
+					break;
+			}
+		}
 
 	void WatchRotations() {
 		initialRaycastUpPos = new Vector2(transform.position.x,transform.position.y+0.7f);
@@ -47,7 +72,6 @@ public class Player : MonoBehaviour {
 				//Debug.Log("UP Name is: "+hitUp.collider.name);
 				rayTouchUp = true;
 				lineCreator.ReloadInk(0.01f);
-				//print(numberOfRotations++);
 			}
 		}
 

@@ -1,0 +1,5 @@
+background 
+https://www.google.com/search?q=city+background+2d+game&tbm=isch&tbs=rimg:CQbb0KQ8lfIbIjiG3otfSokJg1KCVAEsEe7SIvDIIRbYaBNkimj4jSe8ZM4DUy2DCyHKUaJpuqyN0srt2uScB9v5YCoSCYbei19KiQmDEe6ar_1QdKCp-KhIJUoJUASwR7tIRSJa14RAqULwqEgki8MghFthoExGpEsyjHkSRAioSCWSKaPiNJ7xkEd04iHY6HSn8KhIJzgNTLYMLIcoRgzHIiNdh_1xgqEglRomm6rI3SyhFqHOH-HL0UCioSCe3a5JwH2_1lgEXrMzmmSKK3l&tbo=u&sa=X&ved=2ahUKEwjS86j9gLrfAhVKfpAKHcpIBPoQ9C96BAgBEBg#imgrc=nDxZ8OWq1Ur0LM:
+
+enemy IA
+https://www.youtube.com/results?search_query=unity+enemy+follow+player
