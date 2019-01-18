@@ -5,7 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour {
 	//30:35
 	//public Rigidbody2D rb;
-	public LineCreator lineCreator;
+	public InkController inkController;
 	private bool rayTouchUp = false;
 	private Vector2 initialRaycastUpPos;
 	enum ExplosionType {GiantExplosion,GrayExplosion};
@@ -25,7 +25,7 @@ public class Player : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D col){
 		if(col.gameObject.tag == "ink"){
 			Destroy(col.gameObject);
-			lineCreator.ReloadInk(1);
+			inkController.ReloadInk(1);
 		}	
 
 
@@ -71,7 +71,7 @@ public class Player : MonoBehaviour {
 			if(hitUp.collider.name == "triggerCountRotation" || hitUp.collider.name == "triggerCountRotation2"){
 				//Debug.Log("UP Name is: "+hitUp.collider.name);
 				rayTouchUp = true;
-				lineCreator.ReloadInk(0.01f);
+				inkController.ReloadInk(0.01f);
 			}
 		}
 

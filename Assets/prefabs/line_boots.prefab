@@ -73,10 +73,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lineRenderer: {fileID: 120280398740624784}
   edgeCol: {fileID: 68655804258493236}
-  destroyMySelf: 0
-  trailEffect: {fileID: 1731986742605772, guid: 37b4dd7ec1ee836448963478b70c070d,
-    type: 2}
-  Car: {fileID: 0}
+  destroyMySelf: 1
 --- !u!120 &120280398740624784
 LineRenderer:
   m_ObjectHideFlags: 1

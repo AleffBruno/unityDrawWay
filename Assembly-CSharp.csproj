@@ -56,6 +56,7 @@
      <Compile Include="Assets\scripts\allEffects.cs" />
      <Compile Include="Assets\scripts\destroyMyself.cs" />
      <Compile Include="Assets\scripts\DrawWay.cs" />
+     <Compile Include="Assets\scripts\InkController.cs" />
      <Compile Include="Assets\scripts\KitCar.cs" />
      <Compile Include="Assets\scripts\Line.cs" />
      <Compile Include="Assets\scripts\LineCreator.cs" />

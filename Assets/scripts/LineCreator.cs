@@ -9,7 +9,8 @@ public class LineCreator : MonoBehaviour {
 
 	Line activeLine;
 
-	public Image inkImage;
+	//public Image inkImage;
+	public InkController inkController;
 	//private float maxInk;
 
 	// Use this for initialization
@@ -19,36 +20,40 @@ public class LineCreator : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetMouseButtonDown(0) && CanDraw()) {
+
+		if(inkController.CanDraw()) {
+			if (Input.GetMouseButtonDown(0)) {
 			GameObject lineGO = Instantiate(linePrefab);
 			activeLine = lineGO.GetComponent<Line>();
+			}
+
+			if (activeLine != null) {
+			Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+			activeLine.UpdateLine(mousePos);
+			inkController.UseInk();
+			}
 		}
 
 		if (Input.GetMouseButtonUp(0)) {
 			activeLine = null;
 		}
 
-		if (activeLine != null && CanDraw()) {
-			Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-			activeLine.UpdateLine(mousePos);
-			UseInk();
-		}
 
 	}
 
-	bool CanDraw () {
-		if(inkImage.fillAmount > 0){
-			return true;
-		} else {
-			return false;
-		}
-	}
+	// bool CanDraw () {
+	// 	if(inkImage.fillAmount > 0){
+	// 		return true;
+	// 	} else {
+	// 		return false;
+	// 	}
+	// }
 
-	void UseInk() {
-		inkImage.fillAmount = inkImage.fillAmount - 0.1f *Time.deltaTime;
-	}
+	// void UseInk() {
+	// 	inkImage.fillAmount = inkImage.fillAmount - 0.1f *Time.deltaTime;
+	// }
 
-	public void ReloadInk(float quantity = 1) {
-		inkImage.fillAmount = inkImage.fillAmount + quantity;
-	}
+	// public void ReloadInk(float quantity = 1) {
+	// 	inkImage.fillAmount = inkImage.fillAmount + quantity;
+	// }
 }
