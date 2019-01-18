@@ -27,7 +27,12 @@ public class Line : MonoBehaviour {
 	public bool destroyMySelf;
 
 	List<Vector2> points;
+	public Player player;
 
+	void Awake() {
+		//Car = GameObject.Find("car (1)");
+		player = GameObject.Find("car (1)").GetComponent<Player>();
+	}
 	void Start() {
 
 		if(destroyMySelf) {
@@ -38,12 +43,6 @@ public class Line : MonoBehaviour {
 		//var foos = new List<Vector2>(edgeCol.points).ToArray();
 		//print(foos[0]);
 	}
-
-	void Update() {
-
-
-	}
-
 
 	public void UpdateLine (Vector2 mousePos) {
 		if (points == null) {
@@ -88,6 +87,15 @@ public class Line : MonoBehaviour {
 			StartCoroutine(DestroyLine(x+1));
 		}else{
 			Destroy(gameObject);
+		}
+	}
+
+	void OnTriggerEnter2D(Collider2D col){
+		if(col.gameObject.tag == "triggertodieplayer"){
+			player.explodeMyself();
+			print("ontrigerenter");
+			//Destroy(Car);
+			//MATA PLAYER AQUI SE A LINHA ATRAVESSAR ELE
 		}
 	}
 

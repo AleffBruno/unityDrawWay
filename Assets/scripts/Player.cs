@@ -8,7 +8,7 @@ public class Player : MonoBehaviour {
 	public InkController inkController;
 	private bool rayTouchUp = false;
 	private Vector2 initialRaycastUpPos;
-	enum ExplosionType {GiantExplosion,GrayExplosion};
+	public enum ExplosionType {GiantExplosion,GrayExplosion}; // tenho que criar um local pra esse explosionType
 	public allEffects allEffects;
 
 
@@ -27,24 +27,22 @@ public class Player : MonoBehaviour {
 			Destroy(col.gameObject);
 			inkController.ReloadInk(1);
 		}	
-
-
 	}
 
 	void OnTriggerExit2D(Collider2D col) {
-
+		
 	}
 
 	void OnCollisionEnter2D(Collision2D collision)
 	{
 		if (collision.gameObject.tag == "ground")
 		{
-			explodeMyself(ExplosionType.GrayExplosion);
-			print("GAME OVER");
+			//explodeMyself(ExplosionType.GrayExplosion);
+			//print("GAME OVER");
 		}
 	}
 
-	void explodeMyself(ExplosionType explosionType = ExplosionType.GrayExplosion){
+	public void explodeMyself(ExplosionType explosionType = ExplosionType.GrayExplosion){
 			//Destroy(gameObject,0.5f);
 			//Destroy(gameObject);
 			switch(explosionType){

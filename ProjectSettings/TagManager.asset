@@ -8,6 +8,7 @@ TagManager:
   - rotating
   - ground
   - trailEffect
+  - triggertodieplayer
   layers:
   - Default
   - TransparentFX
