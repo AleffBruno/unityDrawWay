@@ -1,0 +1,26 @@
+o carro tem vida, toda vez que gira ou bate em algo perde vida ( detectar se ja nao perdeu vida do mesmo objeto que se encontra, so pode perder novamente se tocar em outro obj)
+
+as fases serao feitas com formas geometricas
+https://www.google.com/search?q=formas+geometricas&source=lnms&tbm=isch&sa=X&ved=0ahUKEwic5KiN3P3fAhXRB9QKHWVcAb8Q_AUIDigB&biw=1366&bih=577#imgdii=aqAZsnetTX1IwM:&imgrc=u5F0gxJyB3rbGM:
+https://www.google.com/search?q=formas+geometricas&tbm=isch&tbs=rimg:CbynG0A-NPUXIjgsWFwN41j3MdWjk_10QjhXwPNfT2B3OAv7sTkV1QYe0s9OStA3A0fGpycqrccFJPENQ6EDEGO-DayoSCSxYXA3jWPcxEQL_1-RmcMOiDKhIJ1aOT_1RCOFfARdp3u3vMxhskqEgk819PYHc4C_1hGWHfP1mCErLioSCexORXVBh7SzEVu8zqbaqc1BKhIJ05K0DcDR8akReO1nP3ugXa4qEgnJyqtxwUk8QxGnp3bdnR_11OioSCVDoQMQY74NrEf-K4xpFfxAe&tbo=u&sa=X&ved=2ahUKEwimqs6Z3P3fAhULK7kGHRnZCbUQ9C96BAgBEBg
+
+dica de menu
+https://i.ytimg.com/vi/QJ8dG7y3WAs/hqdefault.jpg
+
+
+// power ups para pegar tintas para poder desenhas o caminho __OK
+// detectar manobras para dar tinta __OK
+// fazer fases somente de manobras
+// quanto mais giros, mais os pontos se multiplicam __NOP > manter a tela limpa, talvez na versao 2
+// efetiso especiais : explosao , rastro de fogo quando andar mt rapido, distanciar camera em determinados momentos
+// carros inimigos seguem, se encostar morre
+// timer __NOP > deixe o game facil, talve na versao 2
+// shop: aumentar capacidade de tinta
+// explode carro se uma linha passar no meio dele __FAIL
+// stuff de aceletar o carro e deixar rastro de chama
+// objetos dinamicos nas fases
+// fazer fim da fase
+// pause
+
+// detectar se esta na pista ou no ar  __NOP > sem sentido
+// check complete rotation unity __OK

@@ -47,6 +47,7 @@ public class Player : MonoBehaviour {
 			//Destroy(gameObject);
 			switch(explosionType){
 				case ExplosionType.GiantExplosion:
+				Destroy(gameObject);
 					Instantiate(allEffects.GiantExplosion,
 								new Vector2(transform.position.x,transform.position.y+9f),
 								Quaternion.identity);

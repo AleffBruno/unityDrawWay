@@ -94,6 +94,7 @@ public class Line : MonoBehaviour {
 		if(col.gameObject.tag == "triggertodieplayer"){
 			player.explodeMyself();
 			print("ontrigerenter");
+			//AINDA TA BUGADO !!!
 			//Destroy(Car);
 			//MATA PLAYER AQUI SE A LINHA ATRAVESSAR ELE
 		}
